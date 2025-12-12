@@ -1,0 +1,39 @@
+name: Robot Framework Tests
+on:
+  workflow_dispatch: 
+jobs:
+  run-tests:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      USERNAME: ${{ secrets.USERNAME }}
+      USER_PASSWORD: ${{ secrets.USER_PASSWORD }}     
+    steps:
+      - uses: actions/checkout@v4      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
+      - name: Install Python Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Initialize Browser Library
+        run: rfbrowser init
+      - name: Run Robot Tests
+        run: |
+          python -m robot --outputdir results \
+          employee_lifecycle.robot \
+          login.robot \
+          menu_navigation.robot
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-test-report
+          path: results/
