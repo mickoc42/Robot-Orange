@@ -28,9 +28,9 @@ jobs:
       - name: Run Robot Tests
         run: |
           python -m robot --outputdir results \
-          employee_lifecycle.robot \
-          login.robot \
-          menu_navigation.robot
+          tests/employee_lifecycle.robot \
+          tests/login.robot \
+          tests/menu_navigation.robot
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
