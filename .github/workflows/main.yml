@@ -6,9 +6,9 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     env:
-      BASE_URL: ${{ secrets.BASE_URL }}
+      URL: ${{ secrets.URL }}
       USERNAME: ${{ secrets.USERNAME }}
-      USER_PASSWORD: ${{ secrets.USER_PASSWORD }}     
+      PASSWORD: ${{ secrets.PASSWORD }}     
     steps:
       - uses: actions/checkout@v4      
       - name: Setup Node.js
