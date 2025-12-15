@@ -1,16 +1,19 @@
 *** Settings ***
 Library    Browser
 Resource   ${EXECDIR}/src/pages/dashboard_page.resource
-Variables  ${EXECDIR}/src/setup_env_variables.py
+
 
 
 *** Variables ***
 ${BROWSER}      chromium
 ${HEADLESS}     True
+${URL}          https://opensource-demo.orangehrmlive.com/
+${USERNAME}     Admin
+${PASSWORD}     admin123
 *** Keywords ***
 Start New Browser Session
     [Documentation]    Start a new browser session with specified browser and headless mode.
-    New Browser    browser=${BROWSER}    headless=${HEADLESS}    args=['--no-sandbox', '--disable-dev-shm-usage']
+    New Browser    browser=${BROWSER}    headless=${HEADLESS}    args=['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
 
 Start New Context And Page
     [Documentation]    Start a new browser context and open a new page to the application URL.
