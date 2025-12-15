@@ -5,9 +5,8 @@ Variables     ${EXECDIR}/src/setup_env_variables.py
 
 
 *** Variables ***
-${HEADLESS}        False
 ${BROWSER}      chromium
-
+${HEADLESS}     true
 
 *** Keywords ***
 
