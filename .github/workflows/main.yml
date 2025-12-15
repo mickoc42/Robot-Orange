@@ -28,6 +28,7 @@ jobs:
       - name: Run Robot Tests
         run: |
           python -m robot --outputdir results \
+          --variable HEADLESS:true \
           tests/employee_lifecycle.robot \
           tests/login.robot \
           tests/menu_navigation.robot
