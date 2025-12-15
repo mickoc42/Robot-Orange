@@ -11,7 +11,8 @@ ${HEADLESS}     True
 Start New Browser Session
     [Documentation]    Start a new browser session with specified browser and headless mode.
 
-    New Browser    browser=${BROWSER}    headless=${HEADLESS}    args=['--start-maximized']
+    New Browser    browser=${BROWSER}    headless=${HEADLESS}
+    ...    args=['--start-maximized','--no-sandbox', '--disable-dev-shm-usage']
 
 Start New Context And Page
     [Documentation]    Start a new browser context and open a new page to the application URL.
