@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation       Test to verify successful login to the OrangeHRM system.
 Library             Browser
+Resource             ${EXECDIR}/src/common.resource
 
 
 *** Test Cases ***

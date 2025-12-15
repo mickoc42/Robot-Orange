@@ -3,12 +3,11 @@ Documentation       Testy nawigacji w menu bocznym (odpowiednik testów w TS).
 
 Library             Browser
 # Importujemy nasze zasoby (komponenty i strony)
-Resource            ../src/components/side_menu.resource
-Resource            ../src/pages/dashboard_page.resource
-Resource            ../src/pages/pim_page.resource
-Resource            ../src/pages/recruitment_page.resource
-Resource            ../src/common.resource
-
+Resource            ${EXECDIR}/src/components/side_menu.resource
+Resource            ${EXECDIR}/src/pages/dashboard_page.resource
+Resource            ${EXECDIR}/src/pages/pim_page.resource
+Resource            ${EXECDIR}/src/pages/recruitment_page.resource
+Resource            ${EXECDIR}/src/common.resource
 
 *** Test Cases ***
 User Can Navigate To PIM Page
