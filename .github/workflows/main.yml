@@ -18,7 +18,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10' 
+          python-version: '3.13' 
       - name: Install Python Dependencies
         run: |
           pip install --upgrade pip
@@ -28,7 +28,6 @@ jobs:
       - name: Run Robot Tests
         run: |
           python -m robot --outputdir results \
-          --variable HEADLESS:true \
           tests/employee_lifecycle.robot \
           tests/login.robot \
           tests/menu_navigation.robot
