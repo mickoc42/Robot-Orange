@@ -6,10 +6,8 @@ Variables     ${EXECDIR}/src/setup_env_variables.py
 
 *** Variables ***
 ${BROWSER}      chromium
-${HEADLESS}     true
-
+${HEADLESS}     True
 *** Keywords ***
-
 Start New Browser Session
     [Documentation]    Start a new browser session with specified browser and headless mode.
 
