@@ -23,8 +23,10 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Initialize Browser Library
-        run: rfbrowser init
+      - name: Initialize Browser Library and install deps
+        run: 
+          rfbrowser init
+          sudo npx playwright install-deps
       - name: Run Robot Tests
         run: |
           python -m robot --outputdir results \
