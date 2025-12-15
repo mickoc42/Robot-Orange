@@ -1,7 +1,7 @@
 *** Settings ***
 Library    Browser
-Resource       ${EXECDIR}/src/pages/dashboard_page.resource
-Variables     ${EXECDIR}/src/setup_env_variables.py
+Resource   ${EXECDIR}/src/pages/dashboard_page.resource
+Variables  ${EXECDIR}/src/setup_env_variables.py
 
 
 *** Variables ***
@@ -10,13 +10,11 @@ ${HEADLESS}     True
 *** Keywords ***
 Start New Browser Session
     [Documentation]    Start a new browser session with specified browser and headless mode.
-
-    New Browser    browser=${BROWSER}    headless=${HEADLESS}
-    ...    args=['--start-maximized','--no-sandbox', '--disable-dev-shm-usage']
+    New Browser    browser=${BROWSER}    headless=${HEADLESS}    args=['--start-maximized']
 
 Start New Context And Page
     [Documentation]    Start a new browser context and open a new page to the application URL.
-    New Context    viewport=${None}   tracing=${False}
+    New Context    viewport={'width': 1920, 'height': 1080}   tracing=${False}
     New Page       ${URL}
 
 Open App And Login
