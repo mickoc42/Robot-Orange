@@ -26,10 +26,7 @@ jobs:
       - name: Initialize Browser Library
         run: rfbrowser init
       - name: Run Robot Tests
-        run: |
-          python -m robot --outputdir results \
-          tests/login.robot \
-          tests/menu_navigation.robot
+        run: python -m robot --outputdir results tests/
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4

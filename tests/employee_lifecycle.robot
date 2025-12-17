@@ -6,6 +6,10 @@ Resource            ${EXECDIR}/src/views/pim/pim_add_employee.resource
 Resource            ${EXECDIR}/src/views/pim/pim_personal_details.resource
 Resource            ${EXECDIR}/src/views/pim/pim_change_profile_picture_view.resource
 Resource           ${EXECDIR}/src/components/side_menu.resource
+Suite Setup   Start New Browser Session
+Suite Teardown   Close Browser   ALL
+Test Setup    Open App And Login
+Test Teardown  Close Context
 
 
 *** Test Cases ***
