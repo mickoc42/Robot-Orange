@@ -8,6 +8,11 @@ Resource            ${EXECDIR}/src/pages/dashboard_page.resource
 Resource            ${EXECDIR}/src/pages/pim_page.resource
 Resource            ${EXECDIR}/src/pages/recruitment_page.resource
 Resource            ${EXECDIR}/src/common.resource
+Suite Setup   Start New Browser Session
+Suite Teardown   Close Browser   ALL
+Test Setup    Open App And Login
+Test Teardown  Close Context
+
 
 *** Test Cases ***
 User Can Navigate To PIM Page

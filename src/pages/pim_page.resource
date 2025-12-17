@@ -54,5 +54,5 @@ Search And Check Row Visibility
 
 Verify PIM Page Is Visible
     [Documentation]    verifies that we are in the PIM module.
-    Get Url    contains    PIM
+    Wait For Elements State    h6 >> text=PIM    visible
     Get Text   h6    ==    PIM

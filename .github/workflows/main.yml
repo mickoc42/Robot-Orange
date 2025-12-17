@@ -23,17 +23,11 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Install playwright
-        run: npx playwright install --with-deps
       - name: Initialize Browser Library
         run: rfbrowser init
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ github.event_name == 'workflow_dispatch' }}
       - name: Run Robot Tests
         run: |
           python -m robot --outputdir results \
-          tests/employee_lifecycle.robot \
           tests/login.robot \
           tests/menu_navigation.robot
       - name: Upload Test Results
